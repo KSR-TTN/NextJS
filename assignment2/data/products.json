@@ -1,0 +1,17 @@
+[
+    {
+      "id": "1",
+      "name": "Smartphone",
+      "description": "A high-end smartphone with great features.",
+      "price": "$699",
+      "image": "/images/smartphone.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Laptop",
+      "description": "A powerful laptop for work and gaming.",
+      "price": "$1299",
+      "image": "/images/laptop.jpg"
+    }
+  ]
+  
