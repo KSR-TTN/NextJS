@@ -15,7 +15,7 @@ export default function Products() {
           >
             <h2 className="text-xl font-bold">{product.name}</h2>
             <p>{product.description}</p>
-            <p className="font-semibold">{product.price}</p>
+            <p className="fo  nt-semibold">{product.price}</p>
           </a>
         ))}
       </div>
