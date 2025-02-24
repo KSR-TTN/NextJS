@@ -1,63 +1,113 @@
-import { useState } from "react";
-import ClientSide from "./client-side";
-import { useRouter } from "next/router";
+import Image from "next/image";
+import { Geist, Geist_Mono } from "next/font/google";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<"client" | "ssr" | "ssg">("client");
-  const router = useRouter();
-
-  const navigateTo = (path: string) => {
-    router.push(path);
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-200 p-8">
-      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">Next.js Data Fetching Demo</h1>
+    <div
+      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
+    >
+      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+        <Image
+          className="dark:invert"
+          src="/next.svg"
+          alt="Next.js logo"
+          width={180}
+          height={38}
+          priority
+        />
+        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
+          <li className="mb-2">
+            Get started by editing{" "}
+            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
+              pages/index.tsx
+            </code>
+            .
+          </li>
+          <li>Save and see your changes instantly.</li>
+        </ol>
 
-        {/* Tab Navigation */}
-        <div className="flex justify-center gap-4 mb-8">
-          {["client", "ssr", "ssg"].map((tab) => (
-            <button
-              key={tab}
-              className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                activeTab === tab
-                  ? "bg-blue-600 text-white shadow-lg"
-                  : "bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
-              }`}
-              onClick={() => setActiveTab(tab as "client" | "ssr" | "ssg")}
-            >
-              {tab === "client" && "Client-Side"}
-              {tab === "ssr" && "Server-Side (SSR)"}
-              {tab === "ssg" && "Static Site (SSG)"}
-            </button>
-          ))}
+        <div className="flex gap-4 items-center flex-col sm:flex-row">
+          <a
+            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className="dark:invert"
+              src="/vercel.svg"
+              alt="Vercel logomark"
+              width={20}
+              height={20}
+            />
+            Deploy now
+          </a>
+          <a
+            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read our docs
+          </a>
         </div>
-
-        {/* Content Section */}
-        <div className="bg-white p-6 rounded-xl shadow-md">
-          {activeTab === "client" && <ClientSide />}
-          {activeTab === "ssr" && (
-            <button
-              onClick={() => navigateTo("/server-side/1")}
-              className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
-            >
-              🚀 View Server-Side Example (ID: 1)
-            </button>
-          )}
-          {activeTab === "ssg" && (
-            <button
-              onClick={() => navigateTo("/static/1")}
-              className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
-            >
-              📸 View Static Site Example (ID: 1)
-            </button>
-          )}
-        </div>
-      </div>
-
-      <footer className="text-center mt-12 text-gray-600">
-        © {new Date().getFullYear()} Next.js Demo | Styled with Tailwind CSS
+      </main>
+      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/file.svg"
+            alt="File icon"
+            width={16}
+            height={16}
+          />
+          Learn
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/window.svg"
+            alt="Window icon"
+            width={16}
+            height={16}
+          />
+          Examples
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/globe.svg"
+            alt="Globe icon"
+            width={16}
+            height={16}
+          />
+          Go to nextjs.org →
+        </a>
       </footer>
     </div>
   );
