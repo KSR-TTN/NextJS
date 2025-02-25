@@ -24,7 +24,7 @@ export default function StaticPage({ data }: StaticPageProps) {
   );
 }
 
-// 🟢 Step 1: getStaticProps - Fetch data at build time and enable ISR
+
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { id } = params as { id: string };
 

@@ -28,7 +28,7 @@ export default function ClientSide() {
   };
 
   useEffect(() => {
-    fetchPosts(); // Fetch automatically when the component loads
+    fetchPosts(); 
   }, []);
 
   return (

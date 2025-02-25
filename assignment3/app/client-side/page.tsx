@@ -1,4 +1,3 @@
-// app/client-side/page.tsx
 "use client";
 
 import { useEffect, useState } from "react";
@@ -14,7 +13,7 @@ export default function ClientSidePage() {
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts?_limit=5")
       .then((res) => res.json())
-      .then((data) => setPosts(data));
+      .then((data) => setPosts(data));``
   }, []);
 
   return (

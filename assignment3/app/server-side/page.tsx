@@ -1,4 +1,3 @@
-// app/server-side/page.tsx
 async function getPosts() {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=5");
     return res.json();
