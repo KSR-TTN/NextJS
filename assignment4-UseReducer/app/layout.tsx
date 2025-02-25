@@ -1,5 +1,5 @@
 import { ProductsProvider } from "@/app/contextApi/ProductsProvider";
-
+import "./globals.css";
 export default function RootLayout({
   children,
 }: {

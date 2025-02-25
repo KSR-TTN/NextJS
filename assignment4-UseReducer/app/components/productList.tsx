@@ -13,49 +13,41 @@ export default function ProductList() {
   const { products, deleteProduct } = productsContext;
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-6 text-gray-800">
-        🛍️ Product List
-      </h1>
-
-      {products.length === 0 ? (
-        <p className="text-center text-gray-500 text-lg">
-          No products available.
-        </p>
-      ) : (
-        <div className="flex flex-col gap-4 items-center">
+    <div className="w-full max-w-6xl mx-auto mt-12 px-4">
+      <h2 className="text-3xl font-extrabold text-gray-800 text-center mb-6">
+        Product List
+      </h2>
+      {products.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <div
               key={product.id}
-              className="flex items-center justify-between w-full max-w-2xl bg-white p-4 shadow-md rounded-lg border border-gray-200 hover:shadow-lg transition duration-300"
+              className="bg-white p-5 rounded-2xl shadow-lg transition duration-300 hover:shadow-xl flex flex-col items-center"
             >
-              {/* Product Image */}
               <img
                 src={product.image}
                 alt={product.title}
-                className="w-20 h-20 object-contain rounded bg-gray-100 p-1"
+                className="w-40 h-40 object-cover rounded-xl mb-4"
               />
-
-              {/* Product Info */}
-              <div className="flex-1 ml-4">
-                <h2 className="text-lg font-semibold text-gray-900">
-                  {product.title}
-                </h2>
-                <p className="text-gray-600 mt-1 text-sm">
-                  ${product.price.toFixed(2)}
-                </p>
-              </div>
-
-              {/* Delete Button */}
+              <h3 className="text-lg font-semibold text-gray-900 text-center">
+                {product.title}
+              </h3>
+              <p className="text-gray-500 text-center">
+                ${product.price.toFixed(2)}
+              </p>
               <button
-                className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded transition duration-300"
+                className="mt-3 px-5 py-2 w-full bg-red-500 text-white font-medium rounded-lg transition duration-300 hover:bg-red-600"
                 onClick={() => deleteProduct(product.id)}
               >
-                🗑️ Delete
+                Delete
               </button>
             </div>
           ))}
         </div>
+      ) : (
+        <p className="text-center text-gray-500 text-lg">
+          No products available
+        </p>
       )}
     </div>
   );

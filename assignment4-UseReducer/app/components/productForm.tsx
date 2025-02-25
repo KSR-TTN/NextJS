@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useState, useContext } from "react";
 import { ProductsContext } from "../contextApi/ProductsProvider";
 
 export default function ProductForm() {
@@ -21,48 +21,68 @@ export default function ProductForm() {
     if (!title || !price || !image) return;
 
     addProduct({
-      id: Math.floor(Math.random() * 1000), // Random ID for demo
+      id: Date.now(),
       title,
       price: parseFloat(price),
-      description: "New product",
       image,
     });
-
     setTitle("");
     setPrice("");
     setImage("");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 border rounded-md shadow-md">
-      <h2 className="text-lg font-bold mb-2">Add Product</h2>
-      <input
-        type="text"
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        className="w-full p-2 border rounded mb-2"
-      />
-      <input
-        type="text"
-        placeholder="Price"
-        value={price}
-        onChange={(e) => setPrice(e.target.value)}
-        className="w-full p-2 border rounded mb-2"
-      />
-      <input
-        type="text"
-        placeholder="Image URL"
-        value={image}
-        onChange={(e) => setImage(e.target.value)}
-        className="w-full p-2 border rounded mb-2"
-      />
-      <button
-        type="submit"
-        className="w-full bg-blue-500 text-white py-2 rounded"
-      >
-        Add Product
-      </button>
-    </form>
+    <div className="w-full max-w-lg mx-auto mt-10 p-6 bg-white rounded-2xl shadow-lg">
+      <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
+        Add a Product
+      </h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        {/* Title Input */}
+        <div>
+          <label className="block text-gray-700 font-medium mb-1">Title</label>
+          <input
+            type="text"
+            placeholder="Enter product title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-800 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        {/* Price Input */}
+        <div>
+          <label className="block text-gray-700 font-medium mb-1">Price</label>
+          <input
+            type="number"
+            placeholder="Enter price"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-800 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        {/* Image Input */}
+        <div>
+          <label className="block text-gray-700 font-medium mb-1">
+            Image URL
+          </label>
+          <input
+            type="text"
+            placeholder="Enter image URL"
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-800 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className="w-full bg-blue-500 text-white font-semibold py-3 rounded-lg hover:bg-blue-600 transition duration-200"
+        >
+          Add Product
+        </button>
+      </form>
+    </div>
   );
 }
