@@ -11,7 +11,9 @@ interface PostProps {
   }
   
   export default async function PostPage({ params }: PostProps) {
-    const postPatams = await params; 
+    const postPatams =  params; 
+    console.log(params);
+    
     const postId = postPatams.id
     if (!postId) throw new Error("Post ID not found");
   

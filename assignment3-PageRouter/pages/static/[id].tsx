@@ -42,13 +42,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         message: post.title,
       },
     },
-    revalidate: 10, // ISR: Rebuild page every 10 seconds if content changes
+    revalidate: 10, 
   };
 };
 
-// 🔷 Step 2: getStaticPaths - Define dynamic routes to pre-render
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=5"); // Pre-render first 5 posts
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=5");
   const posts = await res.json();
 
   const paths = posts.map((post: { id: number }) => ({
@@ -57,6 +56,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: "blocking", // Generate new pages at request time if not pre-rendered
+    fallback: "blocking", 
   };
 };
