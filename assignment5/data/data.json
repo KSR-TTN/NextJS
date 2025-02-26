@@ -1,0 +1,42 @@
+{
+    "teachers": [
+      { "id": 1, "name": "John Smith", "subject": "Mathematics" },
+      { "id": 2, "name": "Sarah Johnson", "subject": "Physics" },
+      { "id": 3, "name": "David Brown", "subject": "Chemistry" },
+      { "id": 4, "name": "Emily Davis", "subject": "English" },
+      { "id": 5, "name": "Michael Wilson", "subject": "Biology" }
+    ],
+    "students": [
+      { "id": 101, "name": "Alice", "age": 15, "teacherId": 1 },
+      { "id": 102, "name": "Bob", "age": 14, "teacherId": 1 },
+      { "id": 103, "name": "Charlie", "age": 16, "teacherId": 2 },
+      { "id": 104, "name": "David", "age": 15, "teacherId": 3 },
+      { "id": 105, "name": "Emma", "age": 14, "teacherId": 4 },
+      { "id": 106, "name": "Frank", "age": 16, "teacherId": 5 },
+      { "id": 107, "name": "Grace", "age": 15, "teacherId": 1 },
+      { "id": 108, "name": "Henry", "age": 14, "teacherId": 2 },
+      { "id": 109, "name": "Ivy", "age": 16, "teacherId": 3 },
+      { "id": 110, "name": "Jack", "age": 15, "teacherId": 4 },
+      { "id": 111, "name": "Katie", "age": 14, "teacherId": 5 },
+      { "id": 112, "name": "Leo", "age": 16, "teacherId": 1 },
+      { "id": 113, "name": "Mia", "age": 15, "teacherId": 2 },
+      { "id": 114, "name": "Nathan", "age": 14, "teacherId": 3 },
+      { "id": 115, "name": "Olivia", "age": 16, "teacherId": 4 },
+      { "id": 116, "name": "Paul", "age": 15, "teacherId": 5 },
+      { "id": 117, "name": "Quinn", "age": 14, "teacherId": 1 },
+      { "id": 118, "name": "Ryan", "age": 16, "teacherId": 2 },
+      { "id": 119, "name": "Sophia", "age": 15, "teacherId": 3 },
+      { "id": 120, "name": "Thomas", "age": 14, "teacherId": 4 },
+      { "id": 121, "name": "Uma", "age": 16, "teacherId": 5 },
+      { "id": 122, "name": "Victor", "age": 15, "teacherId": 1 },
+      { "id": 123, "name": "Wendy", "age": 14, "teacherId": 2 },
+      { "id": 124, "name": "Xander", "age": 16, "teacherId": 3 },
+      { "id": 125, "name": "Yasmin", "age": 15, "teacherId": 4 },
+      { "id": 126, "name": "Zane", "age": 14, "teacherId": 5 },
+      { "id": 127, "name": "Ava", "age": 16, "teacherId": 1 },
+      { "id": 128, "name": "Ethan", "age": 15, "teacherId": 2 },
+      { "id": 129, "name": "Lily", "age": 14, "teacherId": 3 },
+      { "id": 130, "name": "Oscar", "age": 16, "teacherId": 4 }
+    ]
+  }
+  
