@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useContext } from "react";
-import { ProductsContext } from "../contextApi/ProductsProvider";
+import { ProductsContext } from "../useReducer/ProductsProvider";
 
 export default function ProductForm() {
   const productsContext = useContext(ProductsContext);

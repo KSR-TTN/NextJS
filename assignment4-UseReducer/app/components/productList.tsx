@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext } from "react";
-import { ProductsContext } from "../contextApi/ProductsProvider";
+import { ProductsContext } from "../useReducer/ProductsProvider";
 
 export default function ProductList() {
   const productsContext = useContext(ProductsContext);

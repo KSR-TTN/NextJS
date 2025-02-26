@@ -2,7 +2,7 @@
 
 import ProductForm from "./components/productForm";
 import ProductList from "./components/productList";
-import { ProductsProvider } from "./contextApi/ProductsProvider";
+import { ProductsProvider } from "./useReducer/ProductsProvider";
 
 export default function Home() {
   return (

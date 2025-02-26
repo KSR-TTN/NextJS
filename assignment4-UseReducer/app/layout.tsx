@@ -1,4 +1,4 @@
-import { ProductsProvider } from "@/app/contextApi/ProductsProvider";
+import { ProductsProvider } from "@/app/useReducer/ProductsProvider";
 import "./globals.css";
 export default function RootLayout({
   children,
