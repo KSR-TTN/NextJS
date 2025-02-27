@@ -12,8 +12,6 @@ export async function GET(
   req: Request,
   { params }: { params: { id: string } }
 ) {
-  console.log(params.id);
-
   const par = await params;
   const teacherId = Number(par.id);
   console.log(teacherId);
