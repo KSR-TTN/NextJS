@@ -1,11 +1,11 @@
-import { Dispatch } from 'redux';
+import { Dispatch } from "redux";
 import {
   FETCH_QUOTES_REQUEST,
   FETCH_QUOTES_SUCCESS,
   FETCH_QUOTES_FAILURE,
   QuotesAction,
-  Quote
-} from './type';
+  Quote,
+} from "./type";
 
 export const fetchQuotesRequest = (): QuotesAction => ({
   type: FETCH_QUOTES_REQUEST,
@@ -25,7 +25,7 @@ export const fetchQuotes = () => {
   return async (dispatch: Dispatch<QuotesAction>) => {
     dispatch(fetchQuotesRequest());
     try {
-      const response = await fetch('https://dummyjson.com/quotes');
+      const response = await fetch("https://dummyjson.com/quotes");
       const data = await response.json();
       dispatch(fetchQuotesSuccess(data.quotes));
     } catch (error) {
